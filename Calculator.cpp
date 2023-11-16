@@ -11,11 +11,11 @@ using namespace std;
 class stand_calc
 {
 public:
-  double addition(double , double);
-  double subtract(double , double);
-  double multiplication(double , double);
-  double division(double , double *);
-  double modulu(double * , double *);
+  static double addition(double , double);
+  static double subtract(double , double);
+  static double multiplication(double , double);
+  static double division(double , double *);
+  static double modulu(double * , double *);
 };
 
 //scien_calc to define scientific calculator functions

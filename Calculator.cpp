@@ -22,8 +22,8 @@ public:
 class scien_calc
 {
 public:
-  static double square(double);
-  static double cube(double);
+  static double log_nat(double);
+  static double exponential(double);
   static double power(double , double);
   static double sq_root(double);
   static long int fact(double);
@@ -74,13 +74,13 @@ double stand_calc::modulu(double *a , double *b)
 }
 
 // Declaration of scien_calc class functions starts from here.
-double scien_calc::square(double x)
+double scien_calc::log_nat(double x)
 {
-     return(pow(x , 2)) ;
+     return(log(x)) ;
 }
-double scien_calc::cube(double x)
+double scien_calc::exponential(double x)
 {
-    return(pow(x , 3)) ;
+    return(exp(x)) ;
 }
 double scien_calc::power(double x , double y)
 {
@@ -115,7 +115,6 @@ double scien_calc::tan_func(double x)
 {
      return(tan(x)) ;
 }
-
 
 //Displaying the menus to enter the option and values.
 int main()
@@ -201,7 +200,7 @@ do
             cin >> num2;
             num3 = stand_calc :: multiplication(num1 , num2);
             cout << "\nMultiplication of " << num1 << " and " << num2 << " is " << num3;
-            cout << "\nPress any key to continue......";
+            cout << "\nPress any key to continue......\n";
               temp = num3;
               flag = old_cal;
               break;
@@ -269,7 +268,7 @@ do
              cout << "\nPress any key to continue......";
              break;
         }
-    } while(choice2!=6);
+    } while(choice2!=6); //End of the standard calculator menu loop.
       break;
           case 2:
 // Loop to display the scientific calculator menu.
@@ -277,7 +276,7 @@ do
             do
             {
                 cout << "\n==========Scientific Calculator===========";
-                cout << "\n1\tSquare\n2\tCube\n3\tPower\n4\tFactorial\n5\tSin\n6\tCos\n7\tTan\n8\tReturn to previous menu\n9\tQuit";
+                cout << "\n1\tNatural Log\n2\tExponential\n3\tPower\n4\tFactorial\n5\tSin\n6\tCos\n7\tTan\n8\tReturn to previous menu\n9\tQuit";
                 if(flag == old_cal)
                     cout << "\n10\tClear Memory";
                 cout << "\nChoose the type of calculation:";
@@ -287,7 +286,7 @@ do
                 case 1:
                     if(flag == new_cal)
                     {
-                         cout << "Enter number to find square:";
+                         cout << "Enter number to find it's natural logarithm:";
                          cin >> num1;
                     }
                     else
@@ -295,17 +294,17 @@ do
                         num1 = temp;
                         cout << "\nNumber is" << num1  << endl;
                     }
-                    num3 = scien_calc :: square(num1);
-                    cout << "\nSquare of " << num1 << " is " << num3;
+                    num3 = scien_calc :: log_nat(num1);
+                    cout << "\nNatural Logarithm of " << num1 << " is " << num3;
 
-                    cout << "\nPress any key to continue.......";
+                    cout << "\nPress any key to continue.......\n";
                     temp = num3;
                     flag = old_cal;
                     break;
                 case 2:
                      if(flag == new_cal)
                     {
-                         cout << "Enter number to find cube:";
+                         cout << "Enter number to find exponential:";
                          cin >> num1;
                     }
                     else
@@ -313,8 +312,8 @@ do
                         num1 = temp;
                         cout << "\nNumber is" << num1  << endl;
                     }
-                    num3 = scien_calc :: cube(num1);
-                    cout << "\nCube of " << num1 << " is " << num3;
+                    num3 = scien_calc :: exponential(num1);
+                    cout << "\nExponential of " << num1 << " is " << num3;
                     cout << "\nPress any key to continue.......";
                     temp = num3;
                     flag = old_cal;
